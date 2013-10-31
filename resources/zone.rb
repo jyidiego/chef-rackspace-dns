@@ -1,5 +1,5 @@
 #
-# Cookbook Name:: rsdns
+# Cookbook Name:: raxdns
 # Resource:: zone
 #
 # Copyright 2013, Rackspace
@@ -32,7 +32,7 @@ def initialize(*args)
   super
   @action = :create
   @domain ||= @name
-  @rackspace_username ||= node[:rsdns][:rackspace_username]
-  @rackspace_api_key ||= node[:rsdns][:rackspace_api_key]
-  @rackspace_auth_url ||= node[:rsdns][:rackspace_auth_url]
+  @rackspace_username ||= node[:raxdns][:rackspace_username]
+  @rackspace_api_key ||= node[:raxdns][:rackspace_api_key]
+  @rackspace_auth_url ||= node[:raxdns][:rackspace_auth_url]
 end

@@ -1,6 +1,6 @@
 #
-# Cookbook Name:: rsdns
-# Library:: rsdns
+# Cookbook Name:: raxdns
+# Library:: raxdns
 #
 # Copyright 2013, Rackspace
 #
@@ -27,7 +27,7 @@ end
 module Rackspace
   module DNS
 
-    def rsdns
+    def raxdns
       begin
         creds = Chef::EncryptedDataBagItem.load("rackspace", "cloud")
       rescue Exception => e
@@ -48,9 +48,9 @@ module Rackspace
         Chef::Log.warn "Rackspace username or api key has not been set. For this to work, either set the default attributes or create an encrypted databag of rackspace cloud per the cookbook README"
       end
 
-      @@rsdns ||= Fog::DNS.new(:provider => 'Rackspace', :rackspace_api_key => apikey, 
+      @@raxdns ||= Fog::DNS.new(:provider => 'Rackspace', :rackspace_api_key => apikey, 
                                :rackspace_username => username, :rackspace_auth_url => auth_url)
-      @@rsdns
+      @@raxdns
     end
   end
 end

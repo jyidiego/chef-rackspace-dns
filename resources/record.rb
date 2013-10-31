@@ -1,5 +1,5 @@
 #
-# Cookbook Name:: rsdns
+# Cookbook Name:: raxdns
 # Resource:: record
 #
 # Copyright 2013, Rackspace
@@ -34,7 +34,7 @@ attribute :rackspace_auth_region, :kind_of => [String, NilClass], :default => 'u
 def initialize(*args)
   super
   @action = :create
-  @rackspace_username ||= node[:rsdns][:rackspace_username]
-  @rackspace_api_key ||= node[:rsdns][:rackspace_api_key]
-  @rackspace_auth_region ||= node[:rsdns][:rackspace_auth_region]
+  @rackspace_username ||= node[:raxdns][:rackspace_username]
+  @rackspace_api_key ||= node[:raxdns][:rackspace_api_key]
+  @rackspace_auth_region ||= node[:raxdns][:rackspace_auth_region]
 end

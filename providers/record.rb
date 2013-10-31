@@ -1,5 +1,5 @@
 #
-# Cookbook Name:: rsdns
+# Cookbook Name:: raxdns
 # Provider:: record
 #
 # Copyright 2013, Rackspace
@@ -48,7 +48,7 @@ action :create do
   end
 
   if diff || nx
-    zone = rsdns.zones.find{|z| z.domain == new_resource.domain}
+    zone = raxdns.zones.find{|z| z.domain == new_resource.domain}
     if zone
       record = zone.records.find{|r| r.name == new_resource.name && r.type == new_resource.type}
       if record.nil?
@@ -80,7 +80,7 @@ action :create do
 end
 
 action :delete do
-  zone = rsdns.zones.find{|z| z.domain == new_resource.domain}
+  zone = raxdns.zones.find{|z| z.domain == new_resource.domain}
   if zone
     record = zone.records.find{|r| r.name == new_resource.name && r.type == new_resource.type}
     if record

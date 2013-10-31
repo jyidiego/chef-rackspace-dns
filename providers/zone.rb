@@ -1,5 +1,5 @@
 #
-# Cookbook Name:: rsdns
+# Cookbook Name:: raxdns
 # Provider:: zone
 #
 # Copyright 2013, Rackspace
@@ -20,8 +20,8 @@
 include Rackspace::DNS
 
 action :create do
-  zone_for_id = rsdns.zones.find{|z| z.domain == new_resource.domain}
-  zone = rsdns.zones.get(zone_for_id.id)
+  zone_for_id = raxdns.zones.find{|z| z.domain == new_resource.domain}
+  zone = raxdns.zones.get(zone_for_id.id)
   if zone.nil?
     Chef::Log.info("Creating new zone for #{new_resource.name}")
     dns.zones.create(:name => new_resource.name, :email => new_resource.email, :ttl => new_resource.ttl)
@@ -41,7 +41,7 @@ action :create do
 end
 
 action :delete do
-  zone = rsdns.zones.find{|z| z.domain == new_resource.domain}
+  zone = raxdns.zones.find{|z| z.domain == new_resource.domain}
   if current_resource.nil?
     Chef::Log.info("Zone #{new_resource.name} does not exist")
     new_resource.updated_by_last_action(false)

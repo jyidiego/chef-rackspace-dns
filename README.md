@@ -18,7 +18,7 @@ You can sign up for an account [here](https://cart.rackspace.com/cloud/).
 
 ## Dependencies
 
-The following dependencies are installed via rsdns::default.
+The following dependencies are installed via raxdns::default.
 
 ### Packages
 
@@ -59,9 +59,9 @@ supplied is `us`.
 Alternatively, you can set the credentials through attributes.
 
 ```ruby
-    default[:rsdns][:rackspace_username] = 'your_rackspace_username'
-    default[:rsdns][:rackspace_api_key] = 'your_rackspace_api_key'
-    default[:rsdns][:rackspace_auth_region] = '[us|uk]'
+    default[:raxdns][:rackspace_username] = 'your_rackspace_username'
+    default[:raxdns][:rackspace_api_key] = 'your_rackspace_api_key'
+    default[:raxdns][:rackspace_auth_region] = '[us|uk]'
 ```
 
 ## Resources
@@ -73,7 +73,7 @@ that the domain for `node[:domain]` exists as a domain on your Rackspace Cloud
 account. See the Zone resource for creating a zone via recipe.
 
 ```ruby
-    rsdns_record node[:fqdn] do
+    raxdns_record node[:fqdn] do
       domain node[:domain]
       value node[:ipaddress]
       type 'A'
@@ -96,7 +96,7 @@ are:
 This is an example of creating a new domain (also known as a zone) via recipe.
 
 ```ruby
-    rsdns_zone node[:domain] do
+    raxdns_zone node[:domain] do
       email 'foo@bar.com'
       ttl 300
     end
@@ -107,9 +107,9 @@ The only required attribute is `email`. `ttl` defaults to 300.
 # Attributes
 
 ```ruby
-    default[:rsdns][:rackspace_username] = 'your_rackspace_username'
-    default[:rsdns][:rackspace_api_key] = 'your_rackspace_api_key'
-    default[:rsdns][:rackspace_auth_region] = '[us|uk]'
+    default[:raxdns][:rackspace_username] = 'your_rackspace_username'
+    default[:raxdns][:rackspace_api_key] = 'your_rackspace_api_key'
+    default[:raxdns][:rackspace_auth_region] = '[us|uk]'
 ```
 
 # Recipes

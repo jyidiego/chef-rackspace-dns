@@ -1,7 +1,9 @@
-# chef-rackspace-dns
+# raxdns
 
 # Description
 
+Originally forked from Daniel Givens chef cookbook rackspace-dns
+https://github.com/dgivens/chef-rackspace-dns
 Adds resources for managing DNS zones and records in Rackspace DNS
 
 # Requirements
@@ -18,6 +20,8 @@ The following dependencies are installed via rsdns::default.
 
 ### Packages
 
+* gcc
+* gcc-c++
 * libxml2-dev
 * libxslt-dev
 

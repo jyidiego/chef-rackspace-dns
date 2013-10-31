@@ -23,10 +23,13 @@ when "ubuntu", "debian"
   package( "libxml2-dev" ).run_action( :install )
   package( "build-essential" ).run_action( :install )
 when "redhat", "centos", "fedora", "amazon", "scientific"
+  package( "gcc" ).run_action( :install )
+  package( "gcc-c++" ).run_action( :install )
   package( "libxslt-devel" ).run_action( :install )
   package( "libxml2-devel" ).run_action( :install )
 end
 
+chef_gem "unf"
 chef_gem "fog"
 chef_gem "dnsruby"
 

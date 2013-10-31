@@ -23,6 +23,9 @@ action :create do
   # Check against public DNS to limit unnecessary API traffic
   begin
     res = Dnsruby::DNS.open
+    Chef::Log.info("If #{new_resource.name} is just a hostname and not a FQDN (i.e. coolhost.abc.com) you'll get an error.")
+    Chef::Log.info("new_resource.name: #{new_resource.name}")
+    Chef::Log.info("new_resource.type: #{new_resource.type}")
     current = res.getresource(new_resource.name, new_resource.type)
     if new_resource.type == 'A'
       Chef::Log.info("#{new_resource.name} resolves to #{current.address.to_s}")

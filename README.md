@@ -2,8 +2,10 @@
 
 # Description
 
-Originally forked from Daniel Givens chef cookbook rackspace-dns
+Originally forked from Daniel Givens chef cookbook rackspace-dns:
+
 https://github.com/dgivens/chef-rackspace-dns
+
 Adds resources for managing DNS zones and records in Rackspace DNS
 
 # Requirements
